@@ -18,11 +18,11 @@ function ParseFile(idValue, nameValue, text){
 
     obj["id"] = idValue;
     obj["name"] = nameValue;
-    obj["lecture"] = [];
+    obj["termList"] = [];
 
-    let tempJap = "";
-    let tempKanji = "";
-    let tempEsp = "";
+    let tempTerm = "";
+    let tempExtra = "";
+    let tempAnswer = "";
     let secondTab = false;
     let id = 0;
     let start = 0;
@@ -35,12 +35,12 @@ function ParseFile(idValue, nameValue, text){
         if (char === '\t') {
             //encontre el primer tab
             if(secondTab == false){
-                tempJap = text.substr(start, i - start)
+                tempTerm = text.substr(start, i - start)
                 start = i;
                 secondTab = true;
             }else{
             //encontre el segundo tab 
-                tempKanji = text.substr(start+1, i - start - 1)
+                tempExtra = text.substr(start+1, i - start - 1)
                 start = i;
             }          
         }
@@ -49,14 +49,14 @@ function ParseFile(idValue, nameValue, text){
         //dentro del objeto nuevo de termino y luego lo agrego
         //al 'lecture' array
         if (char === '\n') {
-            tempEsp = text.substr(start+1, i - start - 2);//el 2 es necesario para remover '/r/n' del texto
+            tempAnswer = text.substr(start+1, i - start - 2);//el 2 es necesario para remover '/r/n' del texto
             let tempObj = {
                 "id" : id,
-                "jap" : tempJap,
-                "kanji" : secondTab ? tempKanji : "",
-                "esp" : tempEsp
+                "term" : tempTerm,
+                "extra" : secondTab ? tempExtra : "",
+                "answer" : tempAnswer,
             };
-            obj["lecture"].push(tempObj);
+            obj["termList"].push(tempObj);
             start = i+1;
             id++;
             secondTab = false;
