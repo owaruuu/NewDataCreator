@@ -7,19 +7,21 @@ buttonKanji.addEventListener("click", ProcessFileKanji);
 function ProcessFile() {
     let idValue = document.getElementById("id").value;
     let nameValue = document.getElementById("name").value;
+    let groupValue = document.getElementById("group").value;
     let file = document.getElementById("file").files[0];
 
     file.text().then((text) => {
-        ParseFile(idValue, nameValue, text);
+        ParseFile(idValue, nameValue, groupValue, text);
     });
 }
 
-function ParseFile(idValue, nameValue, text) {
+function ParseFile(idValue, nameValue, groupValue, text) {
     console.log("Parsing file");
     let obj = {};
 
     obj["lectureId"] = idValue;
     obj["name"] = nameValue;
+    obj["lectureGroup"] = groupValue;
     obj["termList"] = [];
 
     let tempTerm = "";

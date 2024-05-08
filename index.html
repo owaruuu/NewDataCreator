@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./index.js" defer></script>
-    <title>Data Creator</title>
-</head>
-<body>
-    <main>
-        <section>
-            <h1>Crear objeto normal</h1>
-            <label for="">id</label>
-            <input id="id" type="text" name="id-normal">
-            <label for="">nombre</label>
-            <input id="name" type="text" name="nombre-normal">
-            <label for="">archivo</label>
-            <input id="file" type="file" name="archivo-normal">
-            <button id="button">Crear</button>
-        </section>
-        <section>
-            <h1>Crear objeto Kanji</h1>
-            <label for="">id</label>
-            <input id="id-kanji" type="text" name="id-kanji">
-            <label for="">nombre</label>
-            <input id="name-kanji" type="text" name="nombre-kanji">
-            <label for="">archivo</label>
-            <input id="file-kanji" type="file" name="archivo-kanji">
-            <input id="checkbox-kanji" type="checkbox"><span>add ESP to answer ?</span>
-            <button id="button-kanji">Crear</button>
-        </section>
-    </main>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./Styles/styles.css" />
+        <script src="./index.js" defer></script>
+        <title>Data Creator</title>
+    </head>
+    <body>
+        <main>
+            <section>
+                <h1>Crear objeto normal</h1>
+                <h3>japones (kanji) / espanol</h3>
+                <div class="form">
+                    <div class="form-input">
+                        <label for="">Id (numero) :</label>
+                        <input id="id" type="text" name="id-normal" />
+                    </div>
+
+                    <div class="form-input">
+                        <label for="">Nombre (que tendra el boton) :</label>
+                        <input id="name" type="text" name="nombre-normal" />
+                    </div>
+
+                    <div class="form-input">
+                        <label for="">Lecture group :</label>
+                        <select name="groups" id="group">
+                            <option value="basico1">Basico 1</option>
+                            <option value="basico2">Basico 2</option>
+                            <option value="basico3">Basico 3</option>
+                            <option value="basico4">Basico 4</option>
+                            <option value="basico5">Basico 5</option>
+                            <option value="basico6">Basico 6</option>
+                            <option value="basico7">Basico 7</option>
+                            <option value="basico8">Basico 8</option>
+                            <option value="basico9">Basico 9</option>
+                            <option value="basico10">Basico 10</option>
+                            <option value="extra1">Extra</option>
+                        </select>
+                    </div>
+
+                    <div class="form-input">
+                        <label for="">Archivo :</label
+                        ><input id="file" type="file" name="archivo-normal" />
+                    </div>
+                </div>
+
+                <button id="button">Crear</button>
+            </section>
+            <hr />
+            <section>
+                <h1>Crear objeto Kanji</h1>
+                <label for="">id</label>
+                <input id="id-kanji" type="text" name="id-kanji" />
+                <label for="">nombre</label>
+                <input id="name-kanji" type="text" name="nombre-kanji" />
+                <label for="">archivo</label>
+                <input id="file-kanji" type="file" name="archivo-kanji" />
+                <input id="checkbox-kanji" type="checkbox" /><span
+                    >add ESP to answer ?</span
+                >
+                <button id="button-kanji">Crear</button>
+            </section>
+        </main>
+    </body>
 </html>
